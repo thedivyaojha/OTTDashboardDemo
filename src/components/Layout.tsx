@@ -1,6 +1,6 @@
 import React from 'react';
 import { LayoutDashboard, Music, CreditCard, MessageCircle, LogOut, Search, CheckCircle2, Upload } from 'lucide-react';
-import artistImg from '../../public/assets/rupankar.jpg';
+//import artistImg from '../../public/assets/rupankar.jpg';
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -35,8 +35,8 @@ export const Layout = ({ children, setView, currentView, onLogout }: LayoutProps
                 {/* SUBTLE CREDIT: SIDEBAR FOOTER */}
                 <div className="pt-8 border-t border-white/5 space-y-6">
                     <div className="px-6 opacity-20 hover:opacity-100 transition-opacity">
-                        <p className="text-[7px] font-black text-zinc-500 tracking-[0.4em] uppercase">Engineered by</p>
-                        <p className="text-[9px] font-black text-zinc-400 tracking-[0.1em] mt-0.5">DIVYA OJHA</p>
+                        <p className="text-[7px] font-black text-zinc-500 tracking-[0.4em] uppercase">Build-D v2.0</p>
+                        <p className="text-[9px] font-black text-zinc-400 tracking-[0.1em] mt-0.5"></p>
                     </div>
                     <SidebarItem icon={LogOut} label="LOGOUT" onClick={onLogout} />
                 </div>
@@ -50,15 +50,15 @@ export const Layout = ({ children, setView, currentView, onLogout }: LayoutProps
                     <div className="flex items-center gap-6">
                         <div className="relative">
                             <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full blur opacity-30"></div>
-                            <img src={artistImg} className="relative w-20 h-20 rounded-full object-cover border-4 border-zinc-950 shadow-2xl" alt="Rupankar Bagchi" />
+                            <img  className="relative w-20 h-20 rounded-full object-cover border-4 border-zinc-950 shadow-2xl" alt="artist image" />
                             <div className="absolute bottom-1 right-1 bg-blue-500 rounded-full p-1 border-2 border-zinc-950">
                                 <CheckCircle2 size={12} className="text-white fill-current" />
                             </div>
                         </div>
                         <div>
-                            <h2 className="text-zinc-500 text-[10px] font-black tracking-[0.3em] uppercase">National Award Artist</h2>
+                            <h2 className="text-zinc-500 text-[10px] font-black tracking-[0.3em] uppercase">Artist-Info</h2>
                             <h1 className="text-4xl font-black text-white tracking-tighter uppercase mt-1">
-                                {currentView === 'OVERVIEW' ? 'Rupankar Bagchi' : currentView.replace('SONGS', 'Song Catalog')}
+                                {currentView === 'OVERVIEW' ? 'Music Lable / Artist' : currentView.replace('SONGS', 'Song Catalog')}
                             </h1>
                         </div>
                     </div>
@@ -69,7 +69,7 @@ export const Layout = ({ children, setView, currentView, onLogout }: LayoutProps
                             <input placeholder="Search Data..." className="bg-transparent border-none outline-none text-sm font-bold w-48 text-white" />
                         </div>
                         <div className="text-right ml-4">
-                            <p className="text-zinc-500 text-[9px] font-black tracking-widest uppercase mb-1 italic">D-Ojha Build v1.0</p>
+                            <p className="text-zinc-500 text-[9px] font-black tracking-widest uppercase mb-1 italic">Build v2.0</p>
                             <div className="flex items-center gap-2 justify-end">
                                 <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
                                 <span className="text-emerald-500 text-[10px] font-black tracking-widest uppercase">Live</span>

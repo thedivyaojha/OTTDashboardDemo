@@ -76,10 +76,10 @@ export const Auth = ({ onLogin }: { onLogin: () => void }) => {
                     {/* Footer Info */}
                     <div className="mt-8 pt-6 border-t border-white/5 text-center">
                         <p className="text-zinc-600 text-[8px] font-black tracking-[0.4em] uppercase">
-                            System Architect: <span className="text-zinc-400">Divya Ojha</span>
+                             <span className="text-zinc-400"></span>
                         </p>
                         <p className="text-[7px] text-zinc-800 font-bold mt-2 uppercase tracking-tighter">
-                            Proprietary Software &copy; 2025 OTT SOLUTIONS PVT LTD
+                            D.O. Build.v2.0
                         </p>
                     </div>
                 </div>

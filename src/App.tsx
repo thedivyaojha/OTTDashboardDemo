@@ -41,10 +41,9 @@ function App() {
                             {/* Architect Credit Card */}
                             <div className="glass p-8 rounded-[3rem] flex flex-col justify-center items-center text-center border border-white/5 relative overflow-hidden group">
                                 <div className="absolute inset-0 bg-indigo-600/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-                                <p className="relative z-10 text-zinc-500 text-[10px] font-black tracking-[0.3em] uppercase mb-4">Architecture Lead</p>
-                                <h2 className="relative z-10 text-white font-black text-3xl tracking-tighter">DIVYA OJHA</h2>
+                                <p className="relative z-10 text-zinc-500 text-[10px] font-black tracking-[0.3em] uppercase mb-4"></p>
                                 <p className="relative z-10 text-zinc-600 text-[10px] mt-4 max-w-xs uppercase font-bold tracking-widest leading-relaxed">
-                                    Ensuring technical integrity and data accuracy for Rupankar Bagchi's Official Portal
+                                    Ensuring technical integrity and data accuracy for Music Label/Artist Official Portal
                                 </p>
                             </div>
                         </div>

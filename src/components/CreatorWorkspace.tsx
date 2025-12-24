@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { FileText, Upload, Download, CheckCircle2, Clock, Music, Info, Send, UserCheck, PenTool } from 'lucide-react';
+import { FileText, Upload, Download, CheckCircle2, Clock, Music, Info, Send, UserCheck, PenTool, Calendar, Hash } from 'lucide-react';
 
 const RESOURCES = [
     { id: 1, title: "Industry Meet 2025 Invite", type: "PDF", size: "2.4 MB", date: "Dec 20, 2025" },
-    { id: 2, title: "Global Licensing Policy - Jibonmukhi", type: "PDF", size: "1.2 MB", date: "Dec 22, 2025" },
-    { id: 3, title: "UK & US Tour Schedule 2026", type: "PDF", size: "3.1 MB", date: "Dec 24, 2025" },
+    { id: 2, title: "Global Licensing Policy v4", type: "PDF", size: "1.2 MB", date: "Dec 22, 2025" },
+    { id: 3, title: "International Tour Guidelines", type: "PDF", size: "3.1 MB", date: "Dec 24, 2025" },
 ];
 
 export const CreatorWorkspace = () => {
     const [submissions] = useState([
-        { id: 101, title: "E Tumi Kemon Tumi", date: "Dec 22", status: "Published", color: "text-emerald-400" },
-        { id: 102, title: "Tui Amar Hobi Na", date: "Dec 23", status: "Review", color: "text-amber-400" },
+        { id: 101, title: "Ke Jeno Dake", date: "Dec 22", status: "Published", color: "text-emerald-400" },
+        { id: 102, title: "Tor Sathe Chole Jai", date: "Dec 23", status: "Review", color: "text-amber-400" },
     ]);
 
     return (
@@ -23,8 +23,7 @@ export const CreatorWorkspace = () => {
                         <h3 className="text-2xl font-black text-white tracking-tighter uppercase italic">Artist Resource Vault</h3>
                         <p className="text-zinc-500 text-xs font-black tracking-widest uppercase mt-1">Official Industry Assets & Documentation</p>
                     </div>
-                    {/* Subtle signature for Divya Ojha */}
-                    <p className="text-[7px] text-zinc-700 font-black tracking-[0.4em] uppercase mb-1">Infrastructure: D.Ojha</p>
+                    <p className="text-[7px] text-zinc-700 font-black tracking-[0.4em] uppercase mb-1 italic">Proprietary System: OTT Solutions</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -47,7 +46,6 @@ export const CreatorWorkspace = () => {
 
             {/* SECTION 2: SONG SUBMISSION & STATUS */}
             <section className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-                {/* Advanced Metadata Form */}
                 <div className="lg:col-span-3 glass p-10 rounded-[3rem] border border-white/10 relative overflow-hidden shadow-2xl">
                     <div className="flex items-center gap-3 mb-8">
                         <Upload className="text-indigo-500" />
@@ -55,12 +53,14 @@ export const CreatorWorkspace = () => {
                     </div>
 
                     <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                        {/* Title Field */}
                         <div className="space-y-2">
                             <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-4">Song Title</label>
-                            <input type="text" placeholder="e.g. Amar Mawte" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-indigo-500 outline-none transition-all" />
+                            <input type="text" placeholder="e.g. Ke Jeno Dake" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-indigo-500 outline-none transition-all" />
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        {/* Credits Row */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
                                 <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-4 flex items-center gap-2">
                                     <PenTool size={10} className="text-indigo-400" /> Lyricist
@@ -75,6 +75,30 @@ export const CreatorWorkspace = () => {
                             </div>
                         </div>
 
+                        {/* Genre & Date Row */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="space-y-2">
+                                <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-4 flex items-center gap-2">
+                                    <Hash size={10} className="text-indigo-400" /> Musical Genre
+                                </label>
+                                <select className="w-full bg-[#0a0a0c] border border-white/10 rounded-2xl px-6 py-4 text-zinc-400 focus:border-indigo-500 outline-none transition-all appearance-none">
+                                    <option>Select Genre</option>
+                                    <option>Classical</option>
+                                    <option>Folk</option>
+                                    <option>Pop</option>
+                                    <option>Indie</option>
+                                    <option>Devotional</option>
+                                </select>
+                            </div>
+                            <div className="space-y-2">
+                                <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-4 flex items-center gap-2">
+                                    <Calendar size={10} className="text-indigo-400" /> Release Date
+                                </label>
+                                <input type="date" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-indigo-500 outline-none transition-all [color-scheme:dark]" />
+                            </div>
+                        </div>
+
+                        {/* File Upload Area */}
                         <div className="p-10 border-2 border-dashed border-white/10 rounded-[2.5rem] text-center bg-white/[0.02] group cursor-pointer hover:border-indigo-500/50 transition-all duration-500">
                             <Music className="mx-auto text-zinc-600 mb-4 group-hover:text-indigo-500 transition-colors" size={32} />
                             <p className="text-xs font-black text-zinc-400 uppercase tracking-widest">Upload Master MP3 / WAV</p>
