@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+:root {
+    background-color: #050505;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background: radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(219, 39, 119, 0.1) 0%, transparent 40%);
+    min-height: 100vh;
+}
+
+/* Glassmorphism utility */
+.glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
