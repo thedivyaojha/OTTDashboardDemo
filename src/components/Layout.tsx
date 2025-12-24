@@ -1,6 +1,6 @@
 import React from 'react';
 import { LayoutDashboard, Music, CreditCard, MessageCircle, LogOut, Search, CheckCircle2, Upload } from 'lucide-react';
-import artistImg from '../assets/rupankar.jpg';
+import artistImg from '../../public/assets/rupankar.jpg';
 
 interface LayoutProps {
     children: React.ReactNode;
