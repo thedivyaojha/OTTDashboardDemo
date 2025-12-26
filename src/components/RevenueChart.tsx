@@ -32,7 +32,7 @@ export const RevenueChart = () => {
         <div className="bg-zinc-900 border border-zinc-800 p-8 rounded-[3rem] mt-8 relative overflow-hidden group">
             {/* Extremely Subtle Creator Stamp - Visible only on hover */}
             <div className="absolute top-4 right-8 opacity-0 group-hover:opacity-10 transition-opacity pointer-events-none">
-                <span className="text-white text-[8px] font-black uppercase tracking-[0.5em]">DO-ARCHITECT-2025</span>
+                <span className="text-white text-[8px] font-black uppercase tracking-[0.5em]"></span>
             </div>
 
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
