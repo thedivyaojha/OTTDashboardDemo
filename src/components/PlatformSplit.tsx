@@ -38,7 +38,7 @@ export const PlatformSplit = () => {
                                     <Cell
                                         key={`cell-${index}`}
                                         fill={entry.color}
-                                        className="transition-all duration-500 hover:opacity-80 cursor-pointer"
+                                        className="transition-all duration-500 hover:opacity-80 cursor-pointer outline-none"
                                     />
                                 ))}
                             </Pie>
@@ -46,9 +46,23 @@ export const PlatformSplit = () => {
                                 content={({ active, payload }) => {
                                     if (active && payload && payload.length) {
                                         return (
-                                            <div className="bg-black/80 backdrop-blur-md border border-white/10 p-3 rounded-xl shadow-2xl">
-                                                <p className="text-white font-bold text-sm">{payload[0].name}</p>
-                                                <p className="text-zinc-400 text-xs">{payload[0].value}% of global rave</p>
+                                            <div className="bg-black/90 backdrop-blur-xl border border-white/10 p-4 rounded-2xl shadow-2xl">
+                                                <div className="flex items-center gap-2 mb-1">
+                                                    <div
+                                                        className="w-2 h-2 rounded-full"
+                                                        style={{ backgroundColor: payload[0].payload.color }}
+                                                    />
+                                                    <p className="text-white font-black text-xs uppercase tracking-widest">
+                                                        {payload[0].name}
+                                                    </p>
+                                                </div>
+                                                <p className="text-white font-black text-lg">
+                                                    {/* THIS LINE ADDS THE PERCENTAGE SIGN */}
+                                                    {payload[0].value}%
+                                                    <span className="text-[10px] text-zinc-500 font-bold ml-1 uppercase tracking-tighter italic">
+                                                        of global share
+                                                    </span>
+                                                </p>
                                             </div>
                                         );
                                     }
@@ -59,18 +73,18 @@ export const PlatformSplit = () => {
                     </ResponsiveContainer>
 
                     {/* Center Text for the Donut */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-                        <p className="text-xs text-zinc-500 uppercase font-bold tracking-widest">Total</p>
-                        <p className="text-2xl font-black text-white">100%</p>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none">
+                        <p className="text-[10px] text-zinc-500 uppercase font-black tracking-[0.2em]">Total</p>
+                        <p className="text-3xl font-black text-white italic tracking-tighter">100%</p>
                     </div>
                 </div>
 
-                <div className="mt-6 grid grid-cols-3 gap-2">
+                <div className="mt-6 grid grid-cols-3 gap-3">
                     {data.map((item) => (
-                        <div key={item.name} className="flex flex-col items-center p-2 rounded-2xl bg-white/5 border border-white/5">
-                            <div className={`w-2 h-2 rounded-full mb-1`} style={{ backgroundColor: item.color }} />
-                            <span className="text-[10px] text-zinc-400 font-medium">{item.name}</span>
-                            <span className="text-xs font-bold text-white">{item.value}%</span>
+                        <div key={item.name} className="flex flex-col items-center p-3 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.07] transition-colors cursor-default">
+                            <div className={`w-3 h-1 rounded-full mb-2`} style={{ backgroundColor: item.color }} />
+                            <span className="text-[9px] text-zinc-500 font-black uppercase tracking-widest mb-1">{item.name}</span>
+                            <span className="text-sm font-black text-white italic">{item.value}%</span>
                         </div>
                     ))}
                 </div>

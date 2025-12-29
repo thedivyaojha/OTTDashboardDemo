@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { FileText, Upload, Download, CheckCircle2, Clock, Music, Info, Send, UserCheck, PenTool, Calendar, Hash } from 'lucide-react';
-
-const RESOURCES = [
-    { id: 1, title: "Industry Meet 2025 Invite", type: "PDF", size: "2.4 MB", date: "Dec 20, 2025" },
-    { id: 2, title: "Global Licensing Policy v4", type: "PDF", size: "1.2 MB", date: "Dec 22, 2025" },
-    { id: 3, title: "International Tour Guidelines", type: "PDF", size: "3.1 MB", date: "Dec 24, 2025" },
-];
+import {
+    Upload, Music, Send, UserCheck, PenTool,
+    Calendar, Hash, Mic2, CheckCircle2, Clock,
+    Info, FileAudio, Sparkles
+} from 'lucide-react';
 
 export const CreatorWorkspace = () => {
     const [submissions] = useState([
@@ -14,74 +12,87 @@ export const CreatorWorkspace = () => {
     ]);
 
     return (
-        <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 space-y-12">
+        <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 space-y-12 pb-20">
 
-            {/* SECTION 1: ARTIST RESOURCE VAULT */}
-            <section>
-                <div className="mb-6 px-4 flex justify-between items-end">
-                    <div>
-                        <h3 className="text-2xl font-black text-white tracking-tighter uppercase italic">Artist Resource Vault</h3>
-                        <p className="text-zinc-500 text-xs font-black tracking-widest uppercase mt-1">Official Industry Assets & Documentation</p>
+            {/* INTRO HEADER */}
+            <div className="px-4 flex justify-between items-end">
+                <div>
+                    <div className="flex items-center gap-2 mb-2">
+                        <div className="h-[1px] w-8 bg-indigo-500"></div>
+                        <span className="text-[10px] font-black text-indigo-500 tracking-[0.4em] uppercase">Artist Portal</span>
                     </div>
-                    <p className="text-[7px] text-zinc-700 font-black tracking-[0.4em] uppercase mb-1 italic">Proprietary System: OTT Solutions</p>
+                    <h3 className="text-4xl font-black text-white tracking-tighter uppercase italic leading-none">
+                        Creator <span className="text-zinc-700">Workspace</span>
+                    </h3>
+                    <p className="text-zinc-500 text-xs font-black tracking-widest uppercase mt-4">
+                        Asset Submission & Metadata Management
+                    </p>
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {RESOURCES.map((file) => (
-                        <div key={file.id} className="glass p-6 rounded-[2.5rem] border border-white/5 group hover:border-indigo-500/50 transition-all duration-500">
-                            <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-indigo-600 transition-all duration-500 text-zinc-400 group-hover:text-white group-hover:shadow-lg group-hover:shadow-indigo-600/20">
-                                <FileText size={24} />
-                            </div>
-                            <h4 className="text-white font-bold text-sm mb-1 leading-tight">{file.title}</h4>
-                            <p className="text-[10px] text-zinc-500 font-black uppercase mb-4 tracking-tighter">{file.type} • {file.size} • {file.date}</p>
-                            <button className="w-full py-3.5 bg-white/5 hover:bg-white hover:text-black rounded-2xl text-[10px] font-black tracking-widest transition-all duration-300 flex items-center justify-center gap-2">
-                                <Download size={14} /> DOWNLOAD DOCUMENT
-                            </button>
-                        </div>
-                    ))}
+                <div className="hidden md:block text-right">
+                    <p className="text-[7px] text-zinc-700 font-black tracking-[0.4em] uppercase mb-1 italic">Secure Upload Uplink: active</p>
+                    <div className="flex items-center gap-2 justify-end">
+                        <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-pulse" />
+                        <span className="text-indigo-500 text-[9px] font-black tracking-widest uppercase">Encrypted Session</span>
+                    </div>
                 </div>
-            </section>
+            </div>
 
-            <hr className="border-white/5" />
-
-            {/* SECTION 2: SONG SUBMISSION & STATUS */}
             <section className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-                <div className="lg:col-span-3 glass p-10 rounded-[3rem] border border-white/10 relative overflow-hidden shadow-2xl">
-                    <div className="flex items-center gap-3 mb-8">
-                        <Upload className="text-indigo-500" />
-                        <h3 className="text-2xl font-black text-white tracking-tighter uppercase">Song & Meta Submission</h3>
+
+                {/* LEFT: SUBMISSION FORM (3 Cols) */}
+                <div className="lg:col-span-3 glass p-10 rounded-[3.5rem] border border-white/10 relative overflow-hidden shadow-2xl">
+                    <div className="absolute top-0 right-0 p-8 opacity-5">
+                        <Sparkles size={120} className="text-white" />
                     </div>
 
-                    <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                        {/* Title Field */}
-                        <div className="space-y-2">
-                            <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-4">Song Title</label>
-                            <input type="text" placeholder="e.g. Ke Jeno Dake" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-indigo-500 outline-none transition-all" />
+                    <div className="flex items-center gap-4 mb-10">
+                        <div className="p-3 bg-indigo-600 rounded-2xl shadow-lg shadow-indigo-600/20 text-white">
+                            <Upload size={22} />
+                        </div>
+                        <div>
+                            <h3 className="text-2xl font-black text-white tracking-tighter uppercase">Song & Meta Submission</h3>
+                            <p className="text-zinc-500 text-[9px] font-black tracking-widest uppercase italic">Ensure all fields match official ID documentation</p>
+                        </div>
+                    </div>
+
+                    <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+                        {/* Title & Singer Row */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="space-y-3">
+                                <label className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] ml-2">Song Title</label>
+                                <input type="text" placeholder="e.g. Ke Jeno Dake" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-indigo-500 outline-none transition-all placeholder:text-zinc-700 font-bold" />
+                            </div>
+                            <div className="space-y-3">
+                                <label className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] ml-2 flex items-center gap-2">
+                                    <Mic2 size={12} className="text-indigo-400" /> Primary Singer
+                                </label>
+                                <input type="text" placeholder="Full legal name..." className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-indigo-500 outline-none transition-all placeholder:text-zinc-700 font-bold" />
+                            </div>
                         </div>
 
                         {/* Credits Row */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="space-y-2">
-                                <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-4 flex items-center gap-2">
-                                    <PenTool size={10} className="text-indigo-400" /> Lyricist
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="space-y-3">
+                                <label className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] ml-2 flex items-center gap-2">
+                                    <PenTool size={12} className="text-indigo-400" /> Lyricist
                                 </label>
-                                <input type="text" placeholder="Lyricist name..." className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-indigo-500 outline-none transition-all" />
+                                <input type="text" placeholder="Lyricist name..." className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-indigo-500 outline-none transition-all placeholder:text-zinc-700 font-bold" />
                             </div>
-                            <div className="space-y-2">
-                                <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-4 flex items-center gap-2">
-                                    <UserCheck size={10} className="text-indigo-400" /> Composer
+                            <div className="space-y-3">
+                                <label className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] ml-2 flex items-center gap-2">
+                                    <UserCheck size={12} className="text-indigo-400" /> Composer
                                 </label>
-                                <input type="text" placeholder="Composer name..." className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-indigo-500 outline-none transition-all" />
+                                <input type="text" placeholder="Composer name..." className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-indigo-500 outline-none transition-all placeholder:text-zinc-700 font-bold" />
                             </div>
                         </div>
 
                         {/* Genre & Date Row */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="space-y-2">
-                                <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-4 flex items-center gap-2">
-                                    <Hash size={10} className="text-indigo-400" /> Musical Genre
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="space-y-3">
+                                <label className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] ml-2 flex items-center gap-2">
+                                    <Hash size={12} className="text-indigo-400" /> Musical Genre
                                 </label>
-                                <select className="w-full bg-[#0a0a0c] border border-white/10 rounded-2xl px-6 py-4 text-zinc-400 focus:border-indigo-500 outline-none transition-all appearance-none">
+                                <select className="w-full bg-[#0a0a0c] border border-white/10 rounded-2xl px-6 py-4 text-zinc-400 focus:border-indigo-500 outline-none transition-all appearance-none font-bold uppercase tracking-widest text-[10px]">
                                     <option>Select Genre</option>
                                     <option>Classical</option>
                                     <option>Folk</option>
@@ -90,62 +101,77 @@ export const CreatorWorkspace = () => {
                                     <option>Devotional</option>
                                 </select>
                             </div>
-                            <div className="space-y-2">
-                                <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-4 flex items-center gap-2">
-                                    <Calendar size={10} className="text-indigo-400" /> Release Date
+                            <div className="space-y-3">
+                                <label className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] ml-2 flex items-center gap-2">
+                                    <Calendar size={12} className="text-indigo-400" /> Planned Release
                                 </label>
-                                <input type="date" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-indigo-500 outline-none transition-all [color-scheme:dark]" />
+                                <input type="date" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:border-indigo-500 outline-none transition-all [color-scheme:dark] font-bold" />
                             </div>
                         </div>
 
                         {/* File Upload Area */}
-                        <div className="p-10 border-2 border-dashed border-white/10 rounded-[2.5rem] text-center bg-white/[0.02] group cursor-pointer hover:border-indigo-500/50 transition-all duration-500">
-                            <Music className="mx-auto text-zinc-600 mb-4 group-hover:text-indigo-500 transition-colors" size={32} />
-                            <p className="text-xs font-black text-zinc-400 uppercase tracking-widest">Upload Master MP3 / WAV</p>
-                            <p className="text-[9px] text-zinc-600 mt-2 font-medium">Drag & Drop or Click to Browse Files</p>
+                        <div className="p-12 border-2 border-dashed border-white/10 rounded-[3rem] text-center bg-white/[0.01] group cursor-pointer hover:border-indigo-500/50 hover:bg-indigo-500/[0.02] transition-all duration-500 relative">
+                            <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-500 text-zinc-600">
+                                <FileAudio size={32} />
+                            </div>
+                            <p className="text-sm font-black text-white uppercase tracking-widest">Upload Master Audio</p>
+                            <p className="text-[10px] text-zinc-600 mt-2 font-black uppercase tracking-[0.2em]">MP3 (320kbps) or WAV (24-bit) preferred</p>
                         </div>
 
-                        <button className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-black py-5 rounded-2xl flex items-center justify-center gap-3 shadow-xl transition-all active:scale-[0.98]">
-                            <Send size={18} /> SUBMIT FOR ADMIN REVIEW
+                        <button className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-black py-6 rounded-[2rem] flex items-center justify-center gap-4 shadow-2xl shadow-indigo-600/20 transition-all active:scale-[0.98] uppercase tracking-[0.3em] text-xs italic">
+                            <Send size={18} className="italic" /> SUBMIT TO COMPLIANCE
                         </button>
                     </form>
                 </div>
 
-                {/* Status Tracker */}
-                <div className="lg:col-span-2 space-y-6">
+                {/* RIGHT: STATUS & INFO (2 Cols) */}
+                <div className="lg:col-span-2 space-y-8">
                     <div className="px-4">
-                        <h3 className="text-xl font-black text-white tracking-tighter uppercase">Submission Status</h3>
-                        <p className="text-zinc-500 text-[10px] font-black tracking-widest uppercase mt-1">Live Review Cycle</p>
+                        <h3 className="text-xl font-black text-white tracking-tighter uppercase italic">Recent Submissions</h3>
+                        <p className="text-zinc-500 text-[10px] font-black tracking-widest uppercase mt-1">Real-time status tracking</p>
                     </div>
 
                     <div className="space-y-4">
                         {submissions.map((sub) => (
-                            <div key={sub.id} className="glass p-6 rounded-3xl border border-white/5 flex items-center justify-between group hover:bg-white/[0.04] transition-all">
+                            <div key={sub.id} className="glass p-6 rounded-[2rem] border border-white/5 flex items-center justify-between group hover:bg-white/[0.04] transition-all border-l-4" style={{borderLeftColor: sub.status === 'Published' ? '#10b981' : '#f59e0b'}}>
                                 <div className="flex items-center gap-4">
-                                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center bg-white/5 ${sub.color}`}>
-                                        {sub.status === 'Published' ? <CheckCircle2 size={20} /> : <Clock size={20} />}
+                                    <div className={`w-12 h-12 rounded-2xl flex items-center justify-center bg-white/5 ${sub.color} shadow-inner`}>
+                                        {sub.status === 'Published' ? <CheckCircle2 size={24} /> : <Clock size={24} />}
                                     </div>
                                     <div>
-                                        <h4 className="text-white font-bold text-sm tracking-tight">{sub.title}</h4>
-                                        <p className="text-[9px] text-zinc-500 font-medium uppercase tracking-tighter">Dated: {sub.date}</p>
+                                        <h4 className="text-white font-black text-sm tracking-tight uppercase group-hover:text-indigo-400 transition-colors">{sub.title}</h4>
+                                        <p className="text-[9px] text-zinc-500 font-black uppercase tracking-widest mt-1">System ID: #{sub.id} • {sub.date}</p>
                                     </div>
                                 </div>
-                                <span className={`text-[9px] font-black uppercase tracking-tighter px-3 py-1 rounded-full bg-white/5 ${sub.color} border border-white/5`}>
-                                    {sub.status}
-                                </span>
+                                <div className="text-right">
+                                    <span className={`text-[8px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full bg-white/5 ${sub.color} border border-white/5`}>
+                                        {sub.status}
+                                    </span>
+                                </div>
                             </div>
                         ))}
                     </div>
 
-                    <div className="p-6 bg-indigo-500/5 border border-indigo-500/20 rounded-[2rem]">
-                        <div className="flex gap-4">
-                            <Info className="text-indigo-400 shrink-0" size={20} />
-                            <p className="text-[10px] text-indigo-300 font-medium leading-relaxed uppercase tracking-wide">
-                                All metadata is verified by OTT Music Compliance before going live. Contact support for expedited publishing.
-                            </p>
+                    {/* Info Card */}
+                    <div className="p-8 bg-indigo-500/5 border border-indigo-500/20 rounded-[2.5rem] relative overflow-hidden group">
+                        <div className="absolute -bottom-4 -right-4 opacity-5 group-hover:scale-110 transition-transform duration-700">
+                            <Info size={80} className="text-indigo-400" />
+                        </div>
+                        <div className="flex gap-4 relative z-10">
+                            <div className="p-2 bg-indigo-500/20 rounded-xl h-fit">
+                                <Info className="text-indigo-400" size={18} />
+                            </div>
+                            <div className="space-y-3">
+                                <p className="text-[11px] text-indigo-100 font-black uppercase tracking-widest italic">Compliance Note</p>
+                                <p className="text-[10px] text-indigo-300/70 font-medium leading-relaxed uppercase tracking-wider">
+                                    All audio and metadata is verified by OTT Music Compliance before distribution.
+                                    Review usually takes <span className="text-indigo-400 font-black">24-48 hours</span>.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </section>
         </div>
     );

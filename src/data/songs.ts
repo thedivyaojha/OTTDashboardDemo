@@ -9,8 +9,10 @@ export interface Song {
     links: {
         spotify: string;
         apple: string;
-        youtube: string;
+        ytMusic: string;
         jiosaavn: string;
+        amazon: string;
+        gaana: string;
     };
 }
 
@@ -20,8 +22,10 @@ export const SONGS: Song[] = [
         links: {
             spotify: "https://open.spotify.com/search/Ke%20Jeno%20Dake",
             apple: "https://music.apple.com/in/search?term=Ke%20Jeno%20Dake",
-            youtube: "https://www.youtube.com/results?search_query=Ke+Jeno+Dake",
-            jiosaavn: "https://www.jiosaavn.com/search/Ke%20Jeno%20Dake"
+            ytMusic: "https://music.youtube.com/search?q=Ke+Jeno+Dake",
+            jiosaavn: "https://www.jiosaavn.com/search/Ke%20Jeno%20Dake",
+            amazon: "https://music.amazon.in/search/Ke%20Jeno%20Dake",
+            gaana: "https://gaana.com/search/Ke%20Jeno%20Dake"
         }
     },
     {
@@ -29,8 +33,10 @@ export const SONGS: Song[] = [
         links: {
             spotify: "https://open.spotify.com/search/Tramline%20Er%20Sheshe",
             apple: "https://music.apple.com/in/search?term=Tramline%20Er%20Sheshe",
-            youtube: "https://www.youtube.com/results?search_query=Tramline+Er+Sheshe",
-            jiosaavn: "https://www.jiosaavn.com/search/Tramline%20Er%20Sheshe"
+            ytMusic: "https://music.youtube.com/search?q=Tramline+Er+Sheshe",
+            jiosaavn: "https://www.jiosaavn.com/search/Tramline%20Er%20Sheshe",
+            amazon: "https://music.amazon.in/search/Tramline%20Er%20Sheshe",
+            gaana: "https://gaana.com/search/Tramline%20Er%20Sheshe"
         }
     },
     {
@@ -38,8 +44,10 @@ export const SONGS: Song[] = [
         links: {
             spotify: "https://open.spotify.com/search/Tor%20Sathe%20Chole%20Jai",
             apple: "https://music.apple.com/in/search?term=Tor%20Sathe%20Chole%20Jai",
-            youtube: "https://www.youtube.com/results?search_query=Tor+Sathe+Chole+Jai",
-            jiosaavn: "https://www.jiosaavn.com/search/Tor%20Sathe%20Chole%20Jai"
+            ytMusic: "https://music.youtube.com/search?q=Tor+Sathe+Chole+Jai",
+            jiosaavn: "https://www.jiosaavn.com/search/Tor%20Sathe%20Chole%20Jai",
+            amazon: "https://music.amazon.in/search/Tor%20Sathe%20Chole%20Jai",
+            gaana: "https://gaana.com/search/Tor%20Sathe%20Chole%20Jai"
         }
     },
     {
@@ -47,8 +55,10 @@ export const SONGS: Song[] = [
         links: {
             spotify: "https://open.spotify.com/search/Ekta%20Ganner%20Jonmodin",
             apple: "https://music.apple.com/in/search?term=Ekta%20Ganner%20Jonmodin",
-            youtube: "https://www.youtube.com/results?search_query=Ekta+Ganner+Jonmodin",
-            jiosaavn: "https://www.jiosaavn.com/search/Ekta%20Ganner%20Jonmodin"
+            ytMusic: "https://music.youtube.com/search?q=Ekta+Ganner+Jonmodin",
+            jiosaavn: "https://www.jiosaavn.com/search/Ekta%20Ganner%20Jonmodin",
+            amazon: "https://music.amazon.in/search/Ekta%20Ganner%20Jonmodin",
+            gaana: "https://gaana.com/search/Ekta%20Ganner%20Jonmodin"
         }
     },
     {
@@ -56,8 +66,10 @@ export const SONGS: Song[] = [
         links: {
             spotify: "https://open.spotify.com/search/Amar%20Meghla%20Akashe",
             apple: "https://music.apple.com/in/search?term=Amar%20Meghla%20Akashe",
-            youtube: "https://www.youtube.com/results?search_query=Amar+Meghla+Akashe",
-            jiosaavn: "https://www.jiosaavn.com/search/Amar%20Meghla%20Akashe"
+            ytMusic: "https://music.youtube.com/search?q=Amar+Meghla+Akashe",
+            jiosaavn: "https://www.jiosaavn.com/search/Amar%20Meghla%20Akashe",
+            amazon: "https://music.amazon.in/search/Amar%20Meghla%20Akashe",
+            gaana: "https://gaana.com/search/Amar%20Meghla%20Akashe"
         }
     },
     {
@@ -65,8 +77,10 @@ export const SONGS: Song[] = [
         links: {
             spotify: "https://open.spotify.com/search/Thakbo%20Kotodin%20Aar",
             apple: "https://music.apple.com/in/search?term=Thakbo%20Kotodin%20Aar",
-            youtube: "https://www.youtube.com/results?search_query=Thakbo+Kotodin+Aar",
-            jiosaavn: "https://www.jiosaavn.com/search/Thakbo%20Kotodin%20Aar"
+            ytMusic: "https://music.youtube.com/search?q=Thakbo+Kotodin+Aar",
+            jiosaavn: "https://www.jiosaavn.com/search/Thakbo%20Kotodin%20Aar",
+            amazon: "https://music.amazon.in/search/Thakbo%20Kotodin%20Aar",
+            gaana: "https://gaana.com/search/Thakbo%20Kotodin%20Aar"
         }
     },
     {
@@ -74,8 +88,10 @@ export const SONGS: Song[] = [
         links: {
             spotify: "https://open.spotify.com/search/Mayer%20Bhashar%20Joy",
             apple: "https://music.apple.com/in/search?term=Mayer%20Bhashar%20Joy",
-            youtube: "https://www.youtube.com/results?search_query=Mayer+Bhashar+Joy",
-            jiosaavn: "https://www.jiosaavn.com/search/Mayer%20Bhashar%20Joy"
+            ytMusic: "https://music.youtube.com/search?q=Mayer+Bhashar+Joy",
+            jiosaavn: "https://www.jiosaavn.com/search/Mayer%20Bhashar%20Joy",
+            amazon: "https://music.amazon.in/search/Mayer%20Bhashar%20Joy",
+            gaana: "https://gaana.com/search/Mayer%20Bhashar%20Joy"
         }
     },
     {
@@ -83,8 +99,10 @@ export const SONGS: Song[] = [
         links: {
             spotify: "https://open.spotify.com/search/Dustu%20Haowa",
             apple: "https://music.apple.com/in/search?term=Dustu%20Haowa",
-            youtube: "https://www.youtube.com/results?search_query=Dustu+Haowa",
-            jiosaavn: "https://www.jiosaavn.com/search/Dustu%20Haowa"
+            ytMusic: "https://music.youtube.com/search?q=Dustu+Haowa",
+            jiosaavn: "https://www.jiosaavn.com/search/Dustu%20Haowa",
+            amazon: "https://music.amazon.in/search/Dustu%20Haowa",
+            gaana: "https://gaana.com/search/Dustu%20Haowa"
         }
     },
     {
@@ -92,8 +110,10 @@ export const SONGS: Song[] = [
         links: {
             spotify: "https://open.spotify.com/search/Ei%20Na%20Hole%20Bondhu",
             apple: "https://music.apple.com/in/search?term=Ei%20Na%20Hole%20Bondhu",
-            youtube: "https://www.youtube.com/results?search_query=Ei+Na+Hole+Bondhu",
-            jiosaavn: "https://www.jiosaavn.com/search/Ei%20Na%20Hole%20Bondhu"
+            ytMusic: "https://music.youtube.com/search?q=Ei+Na+Hole+Bondhu",
+            jiosaavn: "https://www.jiosaavn.com/search/Ei%20Na%20Hole%20Bondhu",
+            amazon: "https://music.amazon.in/search/Ei%20Na%20Hole%20Bondhu",
+            gaana: "https://gaana.com/search/Ei%20Na%20Hole%20Bondhu"
         }
     },
     {
@@ -101,8 +121,10 @@ export const SONGS: Song[] = [
         links: {
             spotify: "https://open.spotify.com/search/Hey%20Namaji",
             apple: "https://music.apple.com/in/search?term=Hey%20Namaji",
-            youtube: "https://www.youtube.com/results?search_query=Hey+Namaji",
-            jiosaavn: "https://www.jiosaavn.com/search/Hey%20Namaji"
+            ytMusic: "https://music.youtube.com/search?q=Hey+Namaji",
+            jiosaavn: "https://www.jiosaavn.com/search/Hey%20Namaji",
+            amazon: "https://music.amazon.in/search/Hey%20Namaji",
+            gaana: "https://gaana.com/search/Hey%20Namaji"
         }
     }
 ];

@@ -9,6 +9,8 @@ import { SongCatalog } from './components/SongCatalog';
 import { CreatorWorkspace } from './components/CreatorWorkspace';
 import { SupportGrievance } from './components/SupportGrievance';
 import { RevenuePortal } from "./components/RevenuePortal";
+import {Reports} from "./components/Reports.tsx";
+import {Resources} from "./components/Resources.tsx";
 
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -59,6 +61,9 @@ function App() {
             case 'REVENUE':
                 // This now renders the full dashboard with payout history and geo-stats
                 return <RevenuePortal />;
+            case 'REPORTS_CRBT': return <Reports type="CRBT" />; // Add this
+            case 'REPORTS_DSP': return <Reports type="DSP" />;   // Add this
+            case 'RESOURCES': return <Resources />;
 
             case 'SUPPORT':
                 return <SupportGrievance />;
